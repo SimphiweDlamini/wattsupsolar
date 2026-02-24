@@ -61,7 +61,7 @@ export default function Footer() {
         justify="center"
       >
         <Text fontSize="sm" color="whiteAlpha.600">
-          © 2026 Watts Up Solar. All rights reserved.
+          &copy; {new Date().getFullYear()} Watts Up Solar. All rights reserved.
         </Text>
       </Flex>
     </Box>

@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -15,9 +15,11 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/">
-          <Text fontSize="xl" fontWeight="bold" color="blue.500">
-            Watts Up Solar
-          </Text>
+          <Image
+            src="/WattsUpSolarBanner2-removebg.png"
+            alt="Watts Up Solar Banner"
+            height="50px"
+          />
         </Link>
 
         {/* Desktop Menu */}
