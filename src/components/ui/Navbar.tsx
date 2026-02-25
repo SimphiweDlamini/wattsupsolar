@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <Box bg="white" boxShadow="sm" position="sticky" top={0} zIndex={10}>
+    <Box bg="teal.300" boxShadow="sm" position="sticky" top={0} zIndex={10}>
       <Flex
         maxW="container.xl"
         mx="auto"
@@ -26,7 +26,7 @@ export default function Navbar() {
         <Flex gap={8} display={{ base: "none", md: "flex" }}>
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
+          {/* <Link href="/services">Services</Link> */}
           <Link href="/portfolio">Portfolio</Link>
           <Link href="/contact">Contact</Link>
         </Flex>
