@@ -75,7 +75,6 @@ export default function Products() {
                 borderColor: "cyan.200",
               }}
             >
-              {/* 1. Image at the top, no padding around it */}
               <Box h={{ base: "300px", md: "400px" }} overflow="hidden">
                 <Image
                   src={product.image}
@@ -88,7 +87,6 @@ export default function Products() {
                 />
               </Box>
 
-              {/* 2. Text Content inside a padded box */}
               <Box p={8}>
                 <Heading
                   size="md"

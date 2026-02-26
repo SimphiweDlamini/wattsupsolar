@@ -1,5 +1,11 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+"use client";
+
+import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
+import "@fontsource/outfit/700.css";
+import "@fontsource/lexend/400.css";
+
+const logoUrl = "/WattsLogo-removebg.png";
 
 export default function Footer() {
   return (
@@ -9,63 +15,66 @@ export default function Footer() {
         mx="auto"
         px="4"
         direction={{ base: "column", md: "row" }}
-        gap="8"
+        gap="2"
         align="start"
+        justify="space-evenly"
       >
-        <Flex direction="column" gap="2">
-          <Text fontSize="xl" fontWeight="bold" mb="4">
-            Connect With Us
-          </Text>
-          <Link
-            href="/about"
-            style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-          >
-            Plot 256/7 Villiers St
+        <VStack align="start" gap="2">
+          <Link href="/contact">
+            <Text
+              fontSize="xl"
+              fontWeight="bold"
+              mb="2"
+              fontFamily="'Outfit', sans-serif"
+              _hover={{ color: "cyan.400" }}
+            >
+              Connect With Us
+            </Text>
           </Link>
-        </Flex>
-
-        <Flex gap="8" direction={{ base: "column", md: "row" }}>
-          <Flex direction="column" gap="2">
-            <Link
-              href="/services"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+          <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
+            Plot 256/7 Villiers St
+          </Text>
+        </VStack>
+        <Flex
+          gap={{ base: "8", lg: "16" }}
+          direction={{ base: "column", md: "row" }}
+          align="start"
+          justify="flex-end"
+        >
+          <VStack align="start" gap="1">
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               +268 2505 6492
-            </Link>
-            <Link
-              href="#"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+            </Text>
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               +268 7943 2185
-            </Link>
-            <Link
-              href="#"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+            </Text>
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               +268 7903 2869
-            </Link>
-          </Flex>
+            </Text>
+          </VStack>
 
-          <Flex direction="column" gap="2">
-            <Link
-              href="#"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+          <VStack align="start" gap="1">
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               office@wattsupsolar.co.sz
-            </Link>
-            <Link
-              href="#"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+            </Text>
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               business@wattsupsolar.co.sz
-            </Link>
-            <Link
-              href="#"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
+            </Text>
+            <Text color="whiteAlpha.800" fontFamily="'Lexend', sans-serif">
               marketing@wattsupsolar.co.sz
-            </Link>
-          </Flex>
+            </Text>
+          </VStack>
+
+          <Box>
+            <Image
+              src={logoUrl}
+              alt="Watts Up Solar Logo"
+              maxH="100px"
+              maxW="200px"
+              objectFit="contain"
+              filter="brightness(1.1)"
+            />
+          </Box>
         </Flex>
       </Flex>
 
@@ -79,7 +88,11 @@ export default function Footer() {
         mt="12"
         justify="center"
       >
-        <Text fontSize="sm" color="whiteAlpha.600">
+        <Text
+          fontSize="sm"
+          color="whiteAlpha.600"
+          fontFamily="'Lexend', sans-serif"
+        >
           &copy; {new Date().getFullYear()} Watts Up Solar. All rights reserved.
         </Text>
       </Flex>

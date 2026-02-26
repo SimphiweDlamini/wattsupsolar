@@ -13,6 +13,7 @@ const images = [
   "/pic5.jpeg",
   "/pic6.jpeg",
   "/pic7.jpeg",
+  "/about.jpg",
   "/pic8.jpeg",
   "/pic9.jpeg",
   "/pic10.jpeg",
@@ -71,7 +72,7 @@ const HomeCarousel = () => {
           </Heading>
           <Text
             fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
-            fontFamily="'Lexend', sans-serif" // Body font
+            fontFamily="'Lexend', sans-serif"
             fontWeight="400"
             maxW="900px"
             lineHeight="tall"
