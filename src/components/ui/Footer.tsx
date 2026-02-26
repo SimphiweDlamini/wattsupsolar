@@ -12,24 +12,37 @@ export default function Footer() {
         gap="8"
         align="start"
       >
-        <Text fontSize="xl" fontWeight="bold" mb="4">
-          Watts Up Solar
-        </Text>
+        <Flex direction="column" gap="2">
+          <Text fontSize="xl" fontWeight="bold" mb="4">
+            Connect With Us
+          </Text>
+          <Link
+            href="/about"
+            style={{ color: "whiteAlpha.800", textDecoration: "none" }}
+          >
+            Plot 256/7 Villiers St
+          </Link>
+        </Flex>
 
         <Flex gap="8" direction={{ base: "column", md: "row" }}>
           <Flex direction="column" gap="2">
-            <Text fontWeight="semibold">Company</Text>
-            <Link
-              href="/about"
-              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
-            >
-              About
-            </Link>
             <Link
               href="/services"
               style={{ color: "whiteAlpha.800", textDecoration: "none" }}
             >
-              Services
+              +268 2505 6492
+            </Link>
+            <Link
+              href="#"
+              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
+            >
+              +268 7943 2185
+            </Link>
+            <Link
+              href="#"
+              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
+            >
+              +268 7903 2869
             </Link>
           </Flex>
 
@@ -38,13 +51,19 @@ export default function Footer() {
               href="#"
               style={{ color: "whiteAlpha.800", textDecoration: "none" }}
             >
-              Privacy
+              office@wattsupsolar.co.sz
             </Link>
             <Link
               href="#"
               style={{ color: "whiteAlpha.800", textDecoration: "none" }}
             >
-              Terms
+              business@wattsupsolar.co.sz
+            </Link>
+            <Link
+              href="#"
+              style={{ color: "whiteAlpha.800", textDecoration: "none" }}
+            >
+              marketing@wattsupsolar.co.sz
             </Link>
           </Flex>
         </Flex>

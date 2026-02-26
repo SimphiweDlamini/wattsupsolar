@@ -28,7 +28,7 @@ export default function Navbar() {
           <Link href="/about">About</Link>
           {/* <Link href="/services">Services</Link> */}
           <Link href="/portfolio">Portfolio</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">Contact Us</Link>
         </Flex>
 
         {/* Mobile menu button - add later */}
