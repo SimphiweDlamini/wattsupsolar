@@ -81,7 +81,6 @@ export default function PortfolioPage() {
               transition="transform 0.3s"
               _hover={{ transform: "translateY(-8px)" }}
             >
-              {/* Image Placeholder */}
               <Box h="300px" bg="gray.200" position="relative">
                 <Image
                   src={project.image}
@@ -135,7 +134,6 @@ export default function PortfolioPage() {
         </SimpleGrid>
       </Container>
 
-      {/* 3. Call to Action */}
       <Container maxW="container.md" textAlign="center" mt={10}>
         <VStack
           gap={6}

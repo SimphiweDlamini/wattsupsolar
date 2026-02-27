@@ -113,6 +113,18 @@ const AboutPage = () => {
                 color="gray.600"
                 lineHeight="tall"
               >
+                Our team has designed and installed over{" "}
+                <strong color="gray.600">One Hundred</strong> residential and
+                commercial photovoltaic installations and is a trusted source
+                for helping residents and business owners to become energy
+                independent with beautiful custom solar designs.
+              </Text>
+              <Text
+                fontFamily="'Lexend', sans-serif"
+                fontSize="md"
+                color="gray.600"
+                lineHeight="tall"
+              >
                 Our team focuses on long-term reliability. We don't just install
                 panels; we design energy ecosystems that save you money and
                 protect the environment for generations to come.

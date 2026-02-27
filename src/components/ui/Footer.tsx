@@ -2,6 +2,7 @@
 
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "@fontsource/outfit/700.css";
 import "@fontsource/lexend/400.css";
 
@@ -76,6 +77,16 @@ export default function Footer() {
             />
           </Box>
         </Flex>
+      </Flex>
+
+      <Flex direction="row" justifySelf="center" gap={10}>
+        <a href="https://www.facebook.com/wattsupsolarsz/">
+          <FaFacebook size={30} />
+        </a>
+
+        <a href="https://www.instagram.com/wattsupsolar8/">
+          <FaInstagram size={30} />
+        </a>
       </Flex>
 
       <Flex
