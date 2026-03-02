@@ -33,6 +33,15 @@ const projects = [
     type: "Off-Grid",
     stats: "6kW Off-Grid",
   },
+  {
+    title: "33kW Peace Corps Solar Installation",
+    location: "Mbabane, Eswatini",
+    description:
+      "A high-capacity commercial energy solution featuring a 33kW ATESS HPS30 hybrid system and Freedom Won LiTE storage to provide uninterrupted power for the Peace Corps facilities.",
+    image: "/pic14.jpg",
+    type: "Hybrid / Commercial",
+    stats: "33kW Hybrid System",
+  },
 ];
 
 export default function PortfolioPage() {
