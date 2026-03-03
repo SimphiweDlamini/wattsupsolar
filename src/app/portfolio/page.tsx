@@ -42,6 +42,15 @@ const projects = [
     type: "Hybrid / Commercial",
     stats: "33kW Hybrid System",
   },
+  {
+    title: "24kWp ESWADE Solar Installation",
+    location: "Eswatini",
+    description:
+      "A commercial-scale renewable energy solution featuring a 24kWp ground-mounted solar array and a 20kW inverter to enhance operational sustainability for ESWADE.",
+    image: "/pic15.jpeg",
+    type: "Commercial",
+    stats: "24kWp Solar, 20kW Inverter",
+  },
 ];
 
 export default function PortfolioPage() {
