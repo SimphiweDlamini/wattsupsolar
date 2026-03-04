@@ -52,7 +52,7 @@ export default function Products() {
             fontSize={{ base: "3xl", md: "4xl" }}
           >
             <Box as="span" color="cyan.500">
-              Our Products
+              Our Services
             </Box>
           </Heading>
           <Box w="150px" h="4px" bg="cyan.400" borderRadius="full" />

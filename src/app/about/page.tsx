@@ -15,7 +15,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-const aboutImage = "/about.jpg";
+const aboutImage = "/about.jpeg";
 
 const AboutPage = () => {
   return (
@@ -89,12 +89,24 @@ const AboutPage = () => {
 
             {/* Text Side */}
             <VStack flex="1" align="start" gap={6}>
+              <Text
+                fontFamily="'Lexend', sans-serif"
+                fontSize="md"
+                color="gray.600"
+                lineHeight="tall"
+              >
+                WATTS UP SOLAR is a leading provider of photovoltaic products
+                dedicated to promoting renewable energy and sustainability. We
+                specialize in designing, installing and maintaining solar energy
+                solutions for residential, commercial and agricultural use. Our
+                mission is to empower Eswatini with green energy.
+              </Text>
               <Heading
                 fontFamily="'Outfit', sans-serif"
                 size="xl"
                 color="gray.800"
               >
-                Our Mission
+                OUR VISION
               </Heading>
               <Text
                 fontFamily="'Lexend', sans-serif"
@@ -102,32 +114,25 @@ const AboutPage = () => {
                 color="gray.600"
                 lineHeight="tall"
               >
-                At Watts Up Solar, we believe that energy independence shouldn't
-                be a luxury. Whether it's a small residential geyser system or a
-                large scale agricultural pump, we bring world-class solar
-                technology to the local Eswatini market.
+                To be the premier choice for solar energy solutions, for homes
+                and businesses in Eswatini.
               </Text>
+              <Heading
+                fontFamily="'Outfit', sans-serif"
+                size="xl"
+                color="gray.800"
+              >
+                OUR MISSION
+              </Heading>
               <Text
                 fontFamily="'Lexend', sans-serif"
                 fontSize="md"
                 color="gray.600"
                 lineHeight="tall"
               >
-                Our team has designed and installed over{" "}
-                <strong color="gray.600">One Hundred</strong> residential and
-                commercial photovoltaic installations and is a trusted source
-                for helping residents and business owners to become energy
-                independent with beautiful custom solar designs.
-              </Text>
-              <Text
-                fontFamily="'Lexend', sans-serif"
-                fontSize="md"
-                color="gray.600"
-                lineHeight="tall"
-              >
-                Our team focuses on long-term reliability. We don't just install
-                panels; we design energy ecosystems that save you money and
-                protect the environment for generations to come.
+                To provide innovative and sustainable solar power systems that
+                deliver significant energy savings and promote environmental
+                stewardship.
               </Text>
 
               {/* Small "Stats" or Highlights */}
