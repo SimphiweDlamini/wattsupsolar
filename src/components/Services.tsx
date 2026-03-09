@@ -56,11 +56,11 @@ export default function Services() {
             fontWeight="700"
             fontSize={{ base: "3xl", md: "4xl" }}
           >
-            <Box as="span" color="cyan.500">
+            <Box as="span" color="#06d00c">
               Our Services
             </Box>
           </Heading>
-          <Box w="150px" h="4px" bg="cyan.400" borderRadius="full" />
+          <Box w="150px" h="4px" bg="#4caf50" borderRadius="full" />
         </VStack>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
@@ -83,7 +83,7 @@ export default function Services() {
                 _hover={{
                   transform: "translateY(-10px)",
                   shadow: "xl",
-                  borderColor: "cyan.200",
+                  borderColor: "#008080",
                 }}
               >
                 <Box h={{ base: "300px", md: "400px" }} overflow="hidden">

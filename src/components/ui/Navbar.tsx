@@ -22,10 +22,10 @@ const navLinks = [
       { name: "Hybrid Systems", path: "/services/hybrid" },
       { name: "Solar Pumps", path: "/services/solar-pumps" },
       { name: "Off-Grid Systems", path: "/services/off-grid" },
-      { name: "Solar PV Geysers", path: "/services/geysers" },
+      { name: "Solar PV Geysers", path: "/services/solarpv" },
     ],
   },
-  { name: "Support & Maintenance", path: "/support-maintenance" },
+  { name: "Support & Maintenance", path: "/maintenance" },
 ];
 
 const logoUrl = "/WattsUpSolarBanner_Orange.png";
@@ -144,12 +144,12 @@ export default function Navbar() {
 
             <NextLink href="/contact" passHref>
               <Button
-                bg="cyan.500"
+                bg="#4caf50"
                 color="white"
                 px={8}
                 rounded="full"
                 fontSize="xs"
-                _hover={{ bg: "cyan.600" }}
+                _hover={{ bg: "#83c5be" }}
               >
                 Contact Us
               </Button>

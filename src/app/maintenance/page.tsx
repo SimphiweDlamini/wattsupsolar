@@ -60,7 +60,7 @@ export default function SupportMaintenancePage() {
       <Box py={24} bg="gray.900" color="white" textAlign="center">
         <Container maxW="container.lg">
           <VStack gap={4}>
-            <Badge bg="cyan.500" color="white" px={3} rounded="full">
+            <Badge bg="#4caf50" color="white" px={3} rounded="full">
               System Longevity
             </Badge>
             <Heading
@@ -68,7 +68,7 @@ export default function SupportMaintenancePage() {
               fontFamily="'Outfit', sans-serif"
             >
               Support &{" "}
-              <Box as="span" color="cyan.400">
+              <Box as="span" color="#06d00c">
                 Maintenance
               </Box>
             </Heading>
@@ -127,7 +127,7 @@ export default function SupportMaintenancePage() {
             <VStack align="start" gap={6}>
               <Heading size="lg" fontFamily="'Outfit', sans-serif">
                 Protect Your{" "}
-                <Text as="span" color="cyan.500">
+                <Text as="span" color="#06d00c">
                   Investment
                 </Text>
               </Heading>
@@ -139,7 +139,7 @@ export default function SupportMaintenancePage() {
             </VStack>
             <Box bg="gray.900" p={8} rounded="2xl" color="white">
               <VStack align="start" gap={4}>
-                <Heading size="sm" color="cyan.400">
+                <Heading size="sm" color="#06d00c">
                   What we check:
                 </Heading>
                 {/* Replaced Divider with a Box for stability */}
@@ -158,7 +158,7 @@ export default function SupportMaintenancePage() {
         <VStack
           gap={6}
           p={10}
-          bg="cyan.600"
+          bg="#4caf50"
           rounded="2xl"
           shadow="xl"
           color="white"
@@ -171,7 +171,7 @@ export default function SupportMaintenancePage() {
           <Link href="/contact" passHref>
             <Button
               bg="white"
-              color="cyan.600"
+              color="#06d00c"
               size="lg"
               px={10}
               _hover={{ bg: "gray.100" }}

@@ -60,11 +60,11 @@ export default function GeysersPage() {
             _hover={{ textDecoration: "none" }}
           >
             <Button
-              bg="cyan.500"
+              bg="#4caf50"
               color="white"
               size="lg"
               px={10}
-              _hover={{ bg: "cyan.600" }}
+              _hover={{ bg: "#83c5be" }}
             >
               Contact Us
             </Button>

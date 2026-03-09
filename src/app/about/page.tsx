@@ -35,7 +35,7 @@ const AboutPage = () => {
             mb={4}
           >
             Powering{" "}
-            <Box as="span" color="cyan.400">
+            <Box as="span" color="#06d00c">
               Eswatini's
             </Box>{" "}
             Future
@@ -70,7 +70,7 @@ const AboutPage = () => {
                 left="-20px"
                 w="100px"
                 h="100px"
-                bg="cyan.50"
+                bg="green.100"
                 rounded="full"
                 zIndex={0}
               />
@@ -137,7 +137,7 @@ const AboutPage = () => {
 
               {/* Small "Stats" or Highlights */}
               <SimpleGrid columns={2} gap={8} pt={4} w="100%">
-                <Box borderLeft="4px solid" borderColor="cyan.400" pl={4}>
+                <Box borderLeft="4px solid" borderColor="#4caf50" pl={4}>
                   <Text fontWeight="bold" fontSize="2xl" color="gray.800">
                     100%
                   </Text>
@@ -145,7 +145,7 @@ const AboutPage = () => {
                     Clean Energy
                   </Text>
                 </Box>
-                <Box borderLeft="4px solid" borderColor="cyan.400" pl={4}>
+                <Box borderLeft="4px solid" borderColor="#4caf50" pl={4}>
                   <Text fontWeight="bold" fontSize="2xl" color="gray.800">
                     Local
                   </Text>

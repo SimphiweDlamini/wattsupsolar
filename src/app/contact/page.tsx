@@ -92,7 +92,7 @@ export default function ContactPage() {
                 fontWeight="bold"
                 letterSpacing="2px"
                 textTransform="uppercase"
-                color="cyan.400"
+                color="#06d00c"
               >
                 Eswatini Operations
               </Text>
@@ -105,7 +105,7 @@ export default function ContactPage() {
               lineHeight="1"
             >
               Get in{" "}
-              <Box as="span" color="cyan.400">
+              <Box as="span" color="#06d00c">
                 Touch
               </Box>
             </Heading>
@@ -127,11 +127,11 @@ export default function ContactPage() {
           <VStack align="flex-start" gap={6}>
             <Heading size="md">Inquiries</Heading>
             <HStack gap={4}>
-              <Icon as={FiPhone} color="cyan.500" />
+              <Icon as={FiPhone} color="#4caf50" />
               <Text>+268 2505 6492</Text>
             </HStack>
             <HStack gap={4}>
-              <Icon as={FiMail} color="cyan.500" />
+              <Icon as={FiMail} color="#4caf50" />
               <Text>office@wattsupsolar.co.sz</Text>
             </HStack>
           </VStack>
@@ -170,9 +170,9 @@ export default function ContactPage() {
 
                 <Button
                   type="submit"
-                  bg="cyan.500"
+                  bg="#4caf50"
                   color="white"
-                  _hover={{ bg: "cyan.600" }}
+                  _hover={{ bg: "#83c5be" }}
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Message"}

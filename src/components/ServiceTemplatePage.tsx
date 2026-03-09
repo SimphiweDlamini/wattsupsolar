@@ -34,7 +34,7 @@ export default function ServiceTemplatePage({
       <Box py={24} bg="gray.900" color="white" textAlign="center">
         <Container maxW="container.lg">
           <VStack gap={4}>
-            <Badge bg="cyan.500" color="white" px={3} rounded="full">
+            <Badge bg="#4caf50" color="white" px={3} rounded="full">
               Our Services
             </Badge>
             <Heading
@@ -42,7 +42,7 @@ export default function ServiceTemplatePage({
               fontFamily="'Outfit', sans-serif"
             >
               {serviceTitle}{" "}
-              <Box as="span" color="cyan.400">
+              <Box as="span" color="#06d00c">
                 {highlightWord}
               </Box>
             </Heading>
@@ -85,7 +85,7 @@ export default function ServiceTemplatePage({
                   <Badge bg="gray.800" color="white" px={3} py={1} rounded="md">
                     {project.sector}
                   </Badge>
-                  <Badge bg="cyan.500" color="white" px={3} py={1} rounded="md">
+                  <Badge bg="#4caf50" color="white" px={3} py={1} rounded="md">
                     {project.type}
                   </Badge>
                 </HStack>
@@ -93,7 +93,7 @@ export default function ServiceTemplatePage({
 
               <VStack align="start" p={8} gap={4}>
                 <Box>
-                  <Text fontSize="sm" fontWeight="bold" color="cyan.600" mb={1}>
+                  <Text fontSize="sm" fontWeight="bold" color="#06d00c" mb={1}>
                     {project.location}
                   </Text>
                   <Heading size="lg" fontFamily="'Outfit', sans-serif">
