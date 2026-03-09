@@ -28,7 +28,7 @@ const navLinks = [
   { name: "Support & Maintenance", path: "/maintenance" },
 ];
 
-const logoUrl = "/WattsUpSolarBanner2-removebg.png";
+const logoUrl = "/WattsUpSolarBanner_Orange.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
