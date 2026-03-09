@@ -1,6 +1,7 @@
 "use client";
 
-import Products from "@/components/Products";
+import Services from "@/components/Services";
+import Products from "@/components/Services";
 import HomeCarousel from "@/components/ui/HomeCarousel";
 import {
   Box,
@@ -15,7 +16,7 @@ export default function Home() {
   return (
     <main>
       <HomeCarousel />
-      <Products />
+      <Services />
     </main>
   );
 }

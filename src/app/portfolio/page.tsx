@@ -162,7 +162,7 @@ export default function PortfolioPage() {
           border="1px solid"
           borderColor="cyan.100"
         >
-          <Heading size="md">Have a similar project in mind?</Heading>
+          <Heading size="md">Interested to work with us?</Heading>
           <Link href="/contact" _hover={{ textDecoration: "none" }}>
             <Button
               bg="cyan.500"
@@ -171,7 +171,7 @@ export default function PortfolioPage() {
               px={10}
               _hover={{ bg: "cyan.600" }}
             >
-              Message Us
+              Contact Us Here
             </Button>
           </Link>
         </VStack>

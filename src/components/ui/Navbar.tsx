@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Box,
   Flex,
@@ -14,12 +15,24 @@ import Link from "next/link";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
+  {
+    name: "Services",
+    path: "#", // Changed to # since it's no longer a page
+    subServices: [
+      { name: "Hybrid Systems", path: "/services/hybrid" },
+      { name: "Solar Pumps", path: "/services/solar-pumps" },
+      { name: "Off-Grid Systems", path: "/services/off-grid" },
+      { name: "Solar PV Geyser Systems", path: "/services/solarpv" },
+    ],
+  },
   { name: "Portfolio", path: "/portfolio" },
 ];
 
 const logoUrl = "/WattsUpSolarBanner2-removebg.png";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Box
       as="nav"
@@ -48,24 +61,99 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <HStack gap={8} display={{ base: "none", md: "flex" }}>
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.path} passHref>
-                <Text
-                  fontSize="sm"
-                  fontWeight="600"
-                  fontFamily="'Outfit', sans-serif"
-                  textTransform="uppercase"
-                  letterSpacing="wider"
-                  color="gray.700"
-                  cursor="pointer"
-                  transition="all 0.2s"
-                  _hover={{ color: "cyan.500" }}
-                >
-                  {link.name}
-                </Text>
-              </Link>
+              <Box
+                key={link.name}
+                position="relative"
+                height="100%"
+                display="flex"
+                alignItems="center"
+                onMouseEnter={() => link.subServices && setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
+              >
+                {/* Check if it has subServices: If yes, render plain Text. If no, render Link */}
+                {link.subServices ? (
+                  <Text
+                    fontSize="sm"
+                    fontWeight="600"
+                    fontFamily="'Outfit', sans-serif"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                    color="gray.700"
+                    cursor="default" // Shows it's a menu, not a clickable page
+                    transition="all 0.2s"
+                    _hover={{ color: "cyan.500" }}
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                    py={4} // Increases hover area
+                  >
+                    {link.name}
+                    <Text as="span" fontSize="xs">
+                      ▾
+                    </Text>
+                  </Text>
+                ) : (
+                  <Link href={link.path} passHref>
+                    <Text
+                      fontSize="sm"
+                      fontWeight="600"
+                      fontFamily="'Outfit', sans-serif"
+                      textTransform="uppercase"
+                      letterSpacing="wider"
+                      color="gray.700"
+                      cursor="pointer"
+                      transition="all 0.2s"
+                      _hover={{ color: "cyan.500" }}
+                      py={4}
+                    >
+                      {link.name}
+                    </Text>
+                  </Link>
+                )}
+
+                {/* THE DROPDOWN MENU */}
+                {link.subServices && isOpen && (
+                  <Box
+                    position="absolute"
+                    top="100%"
+                    left="-20px" // Slight offset to align better
+                    bg="white"
+                    boxShadow="2xl"
+                    borderRadius="lg"
+                    py={3}
+                    minW="240px"
+                    border="1px solid"
+                    borderColor="gray.50"
+                    zIndex={200}
+                    mt="-5px" // Pulls it slightly closer to the trigger
+                  >
+                    {link.subServices.map((sub) => (
+                      <Link key={sub.name} href={sub.path} passHref>
+                        <Box
+                          px={6}
+                          py={3}
+                          role="group"
+                          _hover={{ bg: "cyan.50" }}
+                          transition="all 0.2s"
+                        >
+                          <Text
+                            fontSize="xs"
+                            fontWeight="700"
+                            fontFamily="'Outfit', sans-serif"
+                            textTransform="uppercase"
+                            color="gray.600"
+                            _groupHover={{ color: "cyan.600" }}
+                          >
+                            {sub.name}
+                          </Text>
+                        </Box>
+                      </Link>
+                    ))}
+                  </Box>
+                )}
+              </Box>
             ))}
 
-            {/* Call to Action Button */}
             <Link href="/contact" passHref>
               <Button
                 bg="cyan.500"
@@ -85,15 +173,6 @@ export default function Navbar() {
               </Button>
             </Link>
           </HStack>
-
-          {/* Mobile Menu Icon */}
-          <Box
-            display={{ base: "block", md: "none" }}
-            fontSize="2xl"
-            cursor="pointer"
-          >
-            ☰
-          </Box>
         </Flex>
       </Container>
     </Box>
