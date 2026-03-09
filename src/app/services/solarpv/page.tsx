@@ -1,5 +1,15 @@
+"use client";
+
 import ServicePageTemplate from "@/components/ServiceTemplatePage";
 import { Project } from "@/components/types/project";
+import {
+  Link as ChakraLink,
+  Container,
+  VStack,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const geyserProjects: Project[] = [
   {
@@ -26,11 +36,41 @@ const geyserProjects: Project[] = [
 
 export default function GeysersPage() {
   return (
-    <ServicePageTemplate
-      serviceTitle="Solar PV"
-      highlightWord="Geysers"
-      description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your electricity bill."
-      projects={geyserProjects}
-    />
+    <>
+      <ServicePageTemplate
+        serviceTitle="Solar PV"
+        highlightWord="Geysers"
+        description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your electricity bill."
+        projects={geyserProjects}
+      />
+      <Container maxW="container.md" textAlign="center" pb={24}>
+        <VStack
+          gap={6}
+          p={10}
+          bg="white"
+          rounded="2xl"
+          shadow="md"
+          border="1px solid"
+          borderColor="cyan.100"
+        >
+          <Heading size="md">Interested to work with us?</Heading>
+          <ChakraLink
+            as={NextLink}
+            href="/contact"
+            _hover={{ textDecoration: "none" }}
+          >
+            <Button
+              bg="cyan.500"
+              color="white"
+              size="lg"
+              px={10}
+              _hover={{ bg: "cyan.600" }}
+            >
+              Contact Us
+            </Button>
+          </ChakraLink>
+        </VStack>
+      </Container>
+    </>
   );
 }

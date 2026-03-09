@@ -16,7 +16,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   {
-    name: "Services",
+    name: "Our Solutions",
     path: "#", // Changed to # since it's no longer a page
     subServices: [
       { name: "Hybrid Systems", path: "/services/hybrid" },
@@ -25,7 +25,7 @@ const navLinks = [
       { name: "Solar PV Geyser Systems", path: "/services/solarpv" },
     ],
   },
-  { name: "Portfolio", path: "/portfolio" },
+  { name: "Support & Maintenance", path: "/maintenance" },
 ];
 
 const logoUrl = "/WattsUpSolarBanner2-removebg.png";

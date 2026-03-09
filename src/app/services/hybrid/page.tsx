@@ -1,5 +1,15 @@
+"use client";
+
 import ServicePageTemplate from "@/components/ServiceTemplatePage";
 import { Project } from "@/components/types/project";
+import {
+  Link as ChakraLink,
+  Container,
+  VStack,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const hybridProjects: Project[] = [
   {
@@ -16,11 +26,41 @@ const hybridProjects: Project[] = [
 
 export default function HybridPage() {
   return (
-    <ServicePageTemplate
-      serviceTitle="Hybrid"
-      highlightWord="Systems"
-      description="Optimizing energy by blending solar power with the utility grid."
-      projects={hybridProjects}
-    />
+    <>
+      <ServicePageTemplate
+        serviceTitle="Hybrid"
+        highlightWord="Systems"
+        description="Optimizing energy by blending solar power with the utility grid."
+        projects={hybridProjects}
+      />
+      <Container maxW="container.md" textAlign="center" pb={24}>
+        <VStack
+          gap={6}
+          p={10}
+          bg="white"
+          rounded="2xl"
+          shadow="md"
+          border="1px solid"
+          borderColor="cyan.100"
+        >
+          <Heading size="md">Interested to work with us?</Heading>
+          <ChakraLink
+            as={NextLink}
+            href="/contact"
+            _hover={{ textDecoration: "none" }}
+          >
+            <Button
+              bg="cyan.500"
+              color="white"
+              size="lg"
+              px={10}
+              _hover={{ bg: "cyan.600" }}
+            >
+              Contact Us
+            </Button>
+          </ChakraLink>
+        </VStack>
+      </Container>
+    </>
   );
 }
