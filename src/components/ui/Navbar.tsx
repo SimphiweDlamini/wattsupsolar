@@ -5,33 +5,34 @@ import {
   Box,
   Flex,
   Image,
-  HStack,
   Button,
   Container,
   Text,
+  IconButton,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   {
     name: "Our Solutions",
-    path: "#", // Changed to # since it's no longer a page
+    path: "#",
     subServices: [
       { name: "Hybrid Systems", path: "/services/hybrid" },
       { name: "Solar Pumps", path: "/services/solar-pumps" },
       { name: "Off-Grid Systems", path: "/services/off-grid" },
-      { name: "Solar PV Geyser Systems", path: "/services/solarpv" },
+      { name: "Solar PV Geysers", path: "/services/geysers" },
     ],
   },
-  { name: "Support & Maintenance", path: "/maintenance" },
+  { name: "Support & Maintenance", path: "/support-maintenance" },
 ];
 
 const logoUrl = "/WattsUpSolarBanner_Orange.png";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isDesktopDropdownOpen, setIsDesktopDropdownOpen] = useState(false);
 
   return (
     <Box
@@ -46,134 +47,182 @@ export default function Navbar() {
     >
       <Container maxW="container.xl">
         <Flex py={3} align="center" justify="space-between">
-          {/* Logo Section */}
-          <Link href="/" passHref>
+          <NextLink href="/" passHref>
             <Image
               src={logoUrl}
               alt="Watts Up Solar Logo"
               height={{ base: "40px", md: "50px" }}
               cursor="pointer"
-              transition="transform 0.3s ease"
-              _hover={{ transform: "scale(1.02)" }}
             />
-          </Link>
+          </NextLink>
 
-          {/* Desktop Menu */}
-          <HStack gap={8} display={{ base: "none", md: "flex" }}>
+          {/* FIX: IconButton with icon passed as children, not a prop */}
+          <IconButton
+            display={{ base: "flex", md: "none" }}
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            variant="ghost"
+            aria-label="Toggle Navigation"
+          >
+            <Box as="span" fontSize="24px">
+              {isMobileOpen ? "✕" : "☰"}
+            </Box>
+          </IconButton>
+
+          {/* Desktop Menu - Using gap (modern CSS) */}
+          <Flex display={{ base: "none", md: "flex" }} align="center" gap={8}>
             {navLinks.map((link) => (
               <Box
                 key={link.name}
                 position="relative"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                onMouseEnter={() => link.subServices && setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
+                onMouseEnter={() =>
+                  link.subServices && setIsDesktopDropdownOpen(true)
+                }
+                onMouseLeave={() => setIsDesktopDropdownOpen(false)}
               >
-                {/* Check if it has subServices: If yes, render plain Text. If no, render Link */}
                 {link.subServices ? (
                   <Text
-                    fontSize="sm"
-                    fontWeight="600"
+                    fontSize="xs"
+                    fontWeight="700"
                     fontFamily="'Outfit', sans-serif"
                     textTransform="uppercase"
-                    letterSpacing="wider"
                     color="gray.700"
-                    cursor="default" // Shows it's a menu, not a clickable page
-                    transition="all 0.2s"
-                    _hover={{ color: "cyan.500" }}
-                    display="flex"
-                    alignItems="center"
-                    gap={1}
-                    py={4} // Increases hover area
+                    cursor="default"
+                    py={4}
                   >
-                    {link.name}
-                    <Text as="span" fontSize="xs">
+                    {link.name}{" "}
+                    <Box as="span" ml={1}>
                       ▾
-                    </Text>
+                    </Box>
                   </Text>
                 ) : (
-                  <Link href={link.path} passHref>
+                  <NextLink href={link.path} passHref>
                     <Text
-                      fontSize="sm"
-                      fontWeight="600"
+                      fontSize="xs"
+                      fontWeight="700"
                       fontFamily="'Outfit', sans-serif"
                       textTransform="uppercase"
-                      letterSpacing="wider"
                       color="gray.700"
                       cursor="pointer"
-                      transition="all 0.2s"
-                      _hover={{ color: "cyan.500" }}
                       py={4}
                     >
                       {link.name}
                     </Text>
-                  </Link>
+                  </NextLink>
                 )}
 
-                {/* THE DROPDOWN MENU */}
-                {link.subServices && isOpen && (
+                {/* Dropdown */}
+                {link.subServices && isDesktopDropdownOpen && (
                   <Box
                     position="absolute"
                     top="100%"
-                    left="-20px" // Slight offset to align better
+                    left="-20px"
                     bg="white"
-                    boxShadow="2xl"
-                    borderRadius="lg"
+                    boxShadow="xl"
                     py={3}
                     minW="240px"
                     border="1px solid"
-                    borderColor="gray.50"
-                    zIndex={200}
-                    mt="-5px" // Pulls it slightly closer to the trigger
+                    borderColor="gray.100"
                   >
                     {link.subServices.map((sub) => (
-                      <Link key={sub.name} href={sub.path} passHref>
+                      <NextLink key={sub.name} href={sub.path} passHref>
                         <Box
                           px={6}
                           py={3}
-                          role="group"
-                          _hover={{ bg: "cyan.50" }}
-                          transition="all 0.2s"
+                          cursor="pointer"
+                          _hover={{ bg: "gray.50" }}
                         >
-                          <Text
-                            fontSize="xs"
-                            fontWeight="700"
-                            fontFamily="'Outfit', sans-serif"
-                            textTransform="uppercase"
-                            color="gray.600"
-                            _groupHover={{ color: "cyan.600" }}
-                          >
+                          <Text fontSize="xs" fontWeight="700" color="gray.600">
                             {sub.name}
                           </Text>
                         </Box>
-                      </Link>
+                      </NextLink>
                     ))}
                   </Box>
                 )}
               </Box>
             ))}
 
-            <Link href="/contact" passHref>
+            <NextLink href="/contact" passHref>
               <Button
                 bg="cyan.500"
                 color="white"
                 px={8}
                 rounded="full"
                 fontSize="xs"
-                fontWeight="700"
-                fontFamily="'Outfit', sans-serif"
-                _hover={{
-                  bg: "cyan.600",
-                  transform: "translateY(-2px)",
-                  shadow: "lg",
-                }}
+                _hover={{ bg: "cyan.600" }}
               >
                 Contact Us
               </Button>
-            </Link>
-          </HStack>
+            </NextLink>
+          </Flex>
         </Flex>
+
+        {/* Mobile Menu */}
+        {isMobileOpen && (
+          <Box
+            display={{ base: "block", md: "none" }}
+            pb={6}
+            borderTop="1px solid"
+            borderColor="gray.50"
+          >
+            <Flex direction="column" mt={2}>
+              {navLinks.map((link) => (
+                <Box key={link.name} py={2}>
+                  {link.subServices ? (
+                    <Box>
+                      <Text
+                        fontWeight="700"
+                        fontSize="xs"
+                        color="gray.400"
+                        mt={2}
+                        textTransform="uppercase"
+                      >
+                        {link.name}
+                      </Text>
+                      <Flex direction="column" gap={3} pl={4} mt={2}>
+                        {link.subServices.map((sub) => (
+                          <NextLink key={sub.name} href={sub.path} passHref>
+                            <Text
+                              py={2}
+                              fontSize="md"
+                              onClick={() => setIsMobileOpen(false)}
+                              cursor="pointer"
+                            >
+                              {sub.name}
+                            </Text>
+                          </NextLink>
+                        ))}
+                      </Flex>
+                    </Box>
+                  ) : (
+                    <NextLink href={link.path} passHref>
+                      <Text
+                        py={2}
+                        fontSize="md"
+                        fontWeight="600"
+                        onClick={() => setIsMobileOpen(false)}
+                        cursor="pointer"
+                      >
+                        {link.name}
+                      </Text>
+                    </NextLink>
+                  )}
+                </Box>
+              ))}
+              <NextLink href="/contact" passHref>
+                <Button
+                  w="full"
+                  mt={4}
+                  bg="cyan.500"
+                  color="white"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Contact Us
+                </Button>
+              </NextLink>
+            </Flex>
+          </Box>
+        )}
       </Container>
     </Box>
   );
