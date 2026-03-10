@@ -162,29 +162,39 @@ export default function Navbar() {
           <Box
             display={{ base: "block", md: "none" }}
             pb={6}
+            bg="white" // Ensure background is white
             borderTop="1px solid"
-            borderColor="gray.50"
+            borderColor="gray.100"
           >
-            <Flex direction="column" mt={2}>
+            <Flex direction="column" mt={2} px={4}>
+              {" "}
+              {/* Added padding for alignment */}
               {navLinks.map((link) => (
-                <Box key={link.name} py={2}>
+                <Box
+                  key={link.name}
+                  py={2}
+                  borderBottom="1px solid"
+                  borderColor="gray.50"
+                >
                   {link.subServices ? (
                     <Box>
                       <Text
-                        fontWeight="700"
+                        fontWeight="800"
                         fontSize="xs"
-                        color="gray.400"
+                        color="gray.500" // Subdued header color
                         mt={2}
                         textTransform="uppercase"
                       >
                         {link.name}
                       </Text>
-                      <Flex direction="column" gap={3} pl={4} mt={2}>
+                      <Flex direction="column" mt={2} pl={4}>
                         {link.subServices.map((sub) => (
                           <NextLink key={sub.name} href={sub.path} passHref>
                             <Text
-                              py={2}
+                              py={3}
                               fontSize="md"
+                              fontWeight="600"
+                              color="gray.800" // Explicit dark text
                               onClick={() => setIsMobileOpen(false)}
                               cursor="pointer"
                             >
@@ -197,9 +207,10 @@ export default function Navbar() {
                   ) : (
                     <NextLink href={link.path} passHref>
                       <Text
-                        py={2}
+                        py={3}
                         fontSize="md"
-                        fontWeight="600"
+                        fontWeight="700"
+                        color="gray.800" // Explicit dark text
                         onClick={() => setIsMobileOpen(false)}
                         cursor="pointer"
                       >
@@ -212,8 +223,8 @@ export default function Navbar() {
               <NextLink href="/contact" passHref>
                 <Button
                   w="full"
-                  mt={4}
-                  bg="cyan.500"
+                  mt={6}
+                  bg="#008080" // Using your new Teal-Green
                   color="white"
                   onClick={() => setIsMobileOpen(false)}
                 >

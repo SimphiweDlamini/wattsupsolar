@@ -43,7 +43,7 @@ export default function GeysersPage() {
         description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your electricity bill."
         projects={geyserProjects}
       />
-      <Container maxW="container.md" textAlign="center" pb={24}>
+      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}
@@ -53,7 +53,9 @@ export default function GeysersPage() {
           border="1px solid"
           borderColor="cyan.100"
         >
-          <Heading size="md">Interested to work with us?</Heading>
+          <Heading color="black" size="md">
+            Interested to work with us?
+          </Heading>
           <ChakraLink
             as={NextLink}
             href="/contact"

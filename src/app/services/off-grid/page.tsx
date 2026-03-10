@@ -33,7 +33,7 @@ export default function OffGridPage() {
         description="Reliable power anywhere, completely independent of the national grid."
         projects={offGridProjects}
       />
-      <Container maxW="container.md" textAlign="center" pb={24}>
+      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}
@@ -43,7 +43,9 @@ export default function OffGridPage() {
           border="1px solid"
           borderColor="cyan.100"
         >
-          <Heading size="md">Interested to work with us?</Heading>
+          <Heading color="black" size="md">
+            Interested to work with us?
+          </Heading>
           <ChakraLink
             as={NextLink}
             href="/contact"
