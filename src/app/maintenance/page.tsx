@@ -125,7 +125,11 @@ export default function SupportMaintenancePage() {
         <Container maxW="container.lg">
           <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} alignItems="center">
             <VStack align="start" gap={6}>
-              <Heading size="lg" fontFamily="'Outfit', sans-serif">
+              <Heading
+                color="black"
+                size="lg"
+                fontFamily="'Outfit', sans-serif"
+              >
                 Protect Your{" "}
                 <Text as="span" color="#06d00c">
                   Investment

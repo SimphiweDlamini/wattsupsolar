@@ -70,7 +70,7 @@ export default function ContactPage() {
           right="-5%"
           w="300px"
           h="300px"
-          bg="cyan.500"
+          bg="green.100"
           rounded="full"
           filter="blur(120px)"
           opacity="0.15"
@@ -125,14 +125,16 @@ export default function ContactPage() {
       <Container maxW="container.xl" py={12}>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
           <VStack align="flex-start" gap={6}>
-            <Heading size="md">Inquiries</Heading>
+            <Heading color="black" size="md">
+              Inquiries
+            </Heading>
             <HStack gap={4}>
               <Icon as={FiPhone} color="#4caf50" />
-              <Text>+268 2505 6492</Text>
+              <Text color="black">+268 2505 6492</Text>
             </HStack>
             <HStack gap={4}>
               <Icon as={FiMail} color="#4caf50" />
-              <Text>office@wattsupsolar.co.sz</Text>
+              <Text color="black">office@wattsupsolar.co.sz</Text>
             </HStack>
           </VStack>
 
@@ -140,13 +142,13 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit}>
               <VStack gap={4} align="stretch">
                 <Box>
-                  <Text mb={1} fontWeight="bold" fontSize="xs">
+                  <Text color="black" mb={1} fontWeight="bold" fontSize="xs">
                     NAME
                   </Text>
                   <Input name="name" placeholder="Name" required />
                 </Box>
                 <Box>
-                  <Text mb={1} fontWeight="bold" fontSize="xs">
+                  <Text color="black" mb={1} fontWeight="bold" fontSize="xs">
                     EMAIL
                   </Text>
                   <Input
@@ -157,7 +159,7 @@ export default function ContactPage() {
                   />
                 </Box>
                 <Box>
-                  <Text mb={1} fontWeight="bold" fontSize="xs">
+                  <Text color="black" mb={1} fontWeight="bold" fontSize="xs">
                     MESSAGE
                   </Text>
                   <Textarea

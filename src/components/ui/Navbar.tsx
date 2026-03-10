@@ -224,7 +224,7 @@ export default function Navbar() {
                 <Button
                   w="full"
                   mt={6}
-                  bg="#008080" // Using your new Teal-Green
+                  bg="#4caf50"
                   color="white"
                   onClick={() => setIsMobileOpen(false)}
                 >
