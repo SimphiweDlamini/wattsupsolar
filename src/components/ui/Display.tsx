@@ -89,10 +89,13 @@ export default function Display() {
                 lineHeight="tall"
                 mt={4}
               >
-                Our team has designed and installed over one hundred residential
-                and commercial photovoltaic installations and is a trusted
-                source for helping residents and business owners to become
-                energy independent with beautiful custom solar designs.
+                Our team has designed and installed over{" "}
+                <Box as="span" color="black" fontWeight="extrabold">
+                  One Hundred
+                </Box>{" "}
+                residential and commercial photovoltaic installations and is a
+                trusted source for helping residents and business owners to
+                become energy independent with beautiful custom solar designs.
               </Text>
             </Box>
           </SimpleGrid>

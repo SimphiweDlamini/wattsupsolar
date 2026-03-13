@@ -84,7 +84,7 @@ export default function Footer() {
           <FaFacebook size={30} />
         </a>
 
-        <a href="https://www.instagram.com/wattsupsolar8/">
+        <a href="https://www.instagram.com/solarwatts2026">
           <FaInstagram size={30} />
         </a>
       </Flex>
