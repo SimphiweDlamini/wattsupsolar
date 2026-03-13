@@ -69,6 +69,28 @@ export default function Services() {
           </Heading>
           <Box w="150px" h="4px" bg="#4caf50" borderRadius="full" />
         </VStack>
+        <Flex justify="center" mb={2}>
+          <Box
+            bg="green.50"
+            px={4}
+            py={1}
+            rounded="full"
+            border="1px solid"
+            borderColor="#06d00c20"
+          >
+            <Text
+              textAlign="center"
+              fontFamily="'Outfit', sans-serif"
+              fontWeight="800"
+              color="#06d00c"
+              fontSize={{ base: "xs", md: "sm" }}
+              textTransform="uppercase"
+              letterSpacing="widest"
+            >
+              Choose what fits best for you
+            </Text>
+          </Box>
+        </Flex>
 
         {/* Using Flex instead of SimpleGrid to allow centering of the last item */}
         <Flex
