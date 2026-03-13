@@ -20,6 +20,7 @@ const navLinks = [
     path: "#",
     subServices: [
       { name: "Hybrid Systems", path: "/services/hybrid" },
+      { name: "Grid-Tied Systems", path: "/services/grid-tied" },
       { name: "Solar Pumps", path: "/services/solar-pumps" },
       { name: "Off-Grid Systems", path: "/services/off-grid" },
       { name: "Solar PV Geysers", path: "/services/solarpv" },

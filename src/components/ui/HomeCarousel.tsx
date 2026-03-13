@@ -8,17 +8,15 @@ import { useEffect, useState } from "react";
 const images = [
   "/pic1.jpeg",
   "/pic2.jpeg",
-  // "/pic3.jpeg",
   "/pic4.jpeg",
   "/pic5.jpeg",
   "/pic6.jpeg",
-  "/pic7.jpeg",
-  "/about.jpeg",
   "/pic8.jpeg",
   "/pic9.jpeg",
   "/pic10.jpeg",
   "/pic11.jpeg",
   "/pic12.jpeg",
+  "/pic13.jpg",
 ];
 
 const HomeCarousel = () => {

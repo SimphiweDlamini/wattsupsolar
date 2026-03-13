@@ -2,6 +2,7 @@
 
 import Services from "@/components/Services";
 import Products from "@/components/Services";
+import Display from "@/components/ui/Display";
 import HomeCarousel from "@/components/ui/HomeCarousel";
 import {
   Box,
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <main>
       <HomeCarousel />
+      <Display />
       <Services />
     </main>
   );

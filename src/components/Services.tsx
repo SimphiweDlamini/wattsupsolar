@@ -5,11 +5,11 @@ import {
   Container,
   Heading,
   Text,
-  SimpleGrid,
+  Flex,
   VStack,
   Image,
 } from "@chakra-ui/react";
-import Link from "next/link"; // Use Next.js Link for better performance
+import Link from "next/link";
 
 import "@fontsource/outfit/700.css";
 import "@fontsource/lexend/400.css";
@@ -21,6 +21,13 @@ const services = [
     image: "/SolarPump.png",
     description:
       "Reliable water pumping solutions for irrigation and livestock. Our solar pumps harness the sun's energy to provide a consistent water supply.",
+  },
+  {
+    title: "Grid-Tied Systems",
+    path: "grid-tied",
+    image: "/Grid-tied.png",
+    description:
+      "The most cost-effective way to lower your electricity bill. Use solar power while the sun shines and seamlessly switch to the grid at night.",
   },
   {
     title: "Off Grid Systems",
@@ -63,62 +70,72 @@ export default function Services() {
           <Box w="150px" h="4px" bg="#4caf50" borderRadius="full" />
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
+        {/* Using Flex instead of SimpleGrid to allow centering of the last item */}
+        <Flex
+          wrap="wrap"
+          justifyContent="center"
+          // Using margin on children instead of gap to avoid spacing errors
+        >
           {services.map((service, index) => (
-            <Link
+            <Box
               key={index}
-              href={`/services/${service.path}`}
-              passHref
-              style={{ textDecoration: "none" }}
+              // Set width to slightly less than 50% for 2-column look on desktop
+              w={{ base: "100%", md: "calc(50% - 20px)" }}
+              m="10px" // Creates the "gap" manually
+              rounded="2xl"
+              shadow="sm"
+              bg="white"
+              border="1px solid"
+              borderColor="gray.100"
+              overflow="hidden"
+              cursor="pointer"
+              transition="all 0.3s ease"
+              _hover={{
+                transform: "translateY(-10px)",
+                shadow: "xl",
+                borderColor: "#4caf50",
+              }}
             >
-              <Box
-                rounded="2xl"
-                shadow="sm"
-                bg="white"
-                border="1px solid"
-                borderColor="gray.100"
-                overflow="hidden"
-                cursor="pointer"
-                transition="all 0.3s ease"
-                _hover={{
-                  transform: "translateY(-10px)",
-                  shadow: "xl",
-                  borderColor: "#008080",
-                }}
+              <Link
+                href={`/services/${service.path}`}
+                passHref
+                style={{ textDecoration: "none" }}
               >
-                <Box h={{ base: "300px", md: "400px" }} overflow="hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    w="100%"
-                    h="100%"
-                    objectFit="cover"
-                    transition="transform 0.5s ease"
-                    _hover={{ transform: "scale(1.1)" }}
-                  />
-                </Box>
+                <Box>
+                  <Box h={{ base: "300px", md: "400px" }} overflow="hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      w="100%"
+                      h="100%"
+                      objectFit="cover"
+                      transition="transform 0.5s ease"
+                      _hover={{ transform: "scale(1.1)" }}
+                    />
+                  </Box>
 
-                <Box p={8}>
-                  <Heading
-                    size="md"
-                    mb={4}
-                    fontFamily="'Outfit', sans-serif"
-                    fontWeight="700"
-                  >
-                    {service.title}
-                  </Heading>
-                  <Text
-                    fontFamily="'Lexend', sans-serif"
-                    color="gray.600"
-                    lineHeight="tall"
-                  >
-                    {service.description}
-                  </Text>
+                  <Box p={8}>
+                    <Heading
+                      size="md"
+                      mb={4}
+                      fontFamily="'Outfit', sans-serif"
+                      fontWeight="700"
+                    >
+                      {service.title}
+                    </Heading>
+                    <Text
+                      fontFamily="'Lexend', sans-serif"
+                      color="gray.600"
+                      lineHeight="tall"
+                    >
+                      {service.description}
+                    </Text>
+                  </Box>
                 </Box>
-              </Box>
-            </Link>
+              </Link>
+            </Box>
           ))}
-        </SimpleGrid>
+        </Flex>
       </Container>
     </Box>
   );
