@@ -56,7 +56,8 @@ export default function Services() {
   return (
     <Box py={20} bg="gray.50">
       <Container maxW="container.lg">
-        <VStack mb={16} gap={4}>
+        {/* Main Title Section */}
+        <VStack mb={8} gap={4}>
           <Heading
             textAlign="center"
             fontFamily="'Outfit', sans-serif"
@@ -69,7 +70,9 @@ export default function Services() {
           </Heading>
           <Box w="150px" h="4px" bg="#4caf50" borderRadius="full" />
         </VStack>
-        <Flex justify="center" mb={2}>
+
+        {/* Sub-heading Badge */}
+        <Flex justify="center" mb={12}>
           <Box
             bg="green.50"
             px={4}
@@ -92,18 +95,13 @@ export default function Services() {
           </Box>
         </Flex>
 
-        {/* Using Flex instead of SimpleGrid to allow centering of the last item */}
-        <Flex
-          wrap="wrap"
-          justifyContent="center"
-          // Using margin on children instead of gap to avoid spacing errors
-        >
+        {/* Services Grid (Centered Flex) */}
+        <Flex wrap="wrap" justifyContent="center">
           {services.map((service, index) => (
             <Box
               key={index}
-              // Set width to slightly less than 50% for 2-column look on desktop
               w={{ base: "100%", md: "calc(50% - 20px)" }}
-              m="10px" // Creates the "gap" manually
+              m="10px"
               rounded="2xl"
               shadow="sm"
               bg="white"
