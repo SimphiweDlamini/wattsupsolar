@@ -33,7 +33,7 @@ export default function HybridPage() {
         description="Optimizing energy by blending solar power with the utility grid."
         projects={hybridProjects}
       />
-      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
+      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}

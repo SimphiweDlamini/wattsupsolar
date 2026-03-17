@@ -43,7 +43,7 @@ export default function GeysersPage() {
         description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your electricity bill."
         projects={geyserProjects}
       />
-      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
+      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}

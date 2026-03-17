@@ -140,6 +140,7 @@ export default function Services() {
                       mb={4}
                       fontFamily="'Outfit', sans-serif"
                       fontWeight="700"
+                      color="black"
                     >
                       {service.title}
                     </Heading>

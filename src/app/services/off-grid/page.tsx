@@ -33,7 +33,7 @@ export default function OffGridPage() {
         description="Reliable power anywhere, completely independent of the national grid."
         projects={offGridProjects}
       />
-      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
+      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}

@@ -43,7 +43,7 @@ export default function SolarPumpsPage() {
         description="Sustainable water solutions for agriculture and livestock. Harness the sun to move water without fuel costs or grid reliance."
         projects={pumpProjects}
       />
-      <Container bgColor="white" maxW="container.md" textAlign="center" pb={24}>
+      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
         <VStack
           gap={6}
           p={10}
