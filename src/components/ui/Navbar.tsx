@@ -52,7 +52,7 @@ export default function Navbar() {
             <Image
               src={logoUrl}
               alt="Watts Up Solar Logo"
-              height={{ base: "40px", md: "50px" }}
+              height={{ base: "40px", md: "100px" }}
               cursor="pointer"
             />
           </NextLink>
@@ -82,7 +82,7 @@ export default function Navbar() {
               >
                 {link.subServices ? (
                   <Text
-                    fontSize="xs"
+                    fontSize="lg"
                     fontWeight="700"
                     fontFamily="'Outfit', sans-serif"
                     textTransform="uppercase"
@@ -98,7 +98,7 @@ export default function Navbar() {
                 ) : (
                   <NextLink href={link.path} passHref>
                     <Text
-                      fontSize="xs"
+                      fontSize="lg"
                       fontWeight="700"
                       fontFamily="'Outfit', sans-serif"
                       textTransform="uppercase"
@@ -118,7 +118,7 @@ export default function Navbar() {
                     top="100%"
                     left="-20px"
                     bg="white"
-                    boxShadow="xl"
+                    boxShadow="lg"
                     py={3}
                     minW="240px"
                     border="1px solid"
@@ -132,7 +132,7 @@ export default function Navbar() {
                           cursor="pointer"
                           _hover={{ bg: "gray.50" }}
                         >
-                          <Text fontSize="xs" fontWeight="700" color="gray.600">
+                          <Text fontSize="lg" fontWeight="700" color="gray.600">
                             {sub.name}
                           </Text>
                         </Box>
@@ -147,9 +147,9 @@ export default function Navbar() {
               <Button
                 bg="#4caf50"
                 color="white"
-                px={8}
+                px={10}
                 rounded="full"
-                fontSize="xs"
+                fontSize="lg"
                 _hover={{ bg: "#83c5be" }}
               >
                 Contact Us

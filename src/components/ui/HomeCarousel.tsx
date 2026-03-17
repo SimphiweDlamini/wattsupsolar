@@ -58,7 +58,7 @@ const HomeCarousel = () => {
         justify="center"
         color="white"
       >
-        <VStack maxW="1200px" textAlign="center" px={6}>
+        <VStack maxW="100vw" textAlign="center" px={6}>
           <Heading
             fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
             fontFamily="'Outfit', sans-serif"
@@ -72,7 +72,7 @@ const HomeCarousel = () => {
             fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
             fontFamily="'Lexend', sans-serif"
             fontWeight="400"
-            maxW="900px"
+            maxW="100%"
             lineHeight="tall"
           >
             Welcome to <strong>Watts Up Solar</strong>! We provide sustainable{" "}
