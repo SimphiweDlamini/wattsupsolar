@@ -8,6 +8,8 @@ import {
   VStack,
   Heading,
   Button,
+  Box,
+  Text,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -43,36 +45,41 @@ export default function SolarPumpsPage() {
         description="Sustainable water solutions for agriculture and livestock. Harness the sun to move water without fuel costs or grid reliance."
         projects={pumpProjects}
       />
-      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
-        <VStack
-          gap={6}
-          p={10}
-          bg="white"
-          rounded="2xl"
-          shadow="md"
-          border="1px solid"
-          borderColor="cyan.100"
-        >
-          <Heading color="black" size="md">
-            Interested to work with us?
-          </Heading>
-          <ChakraLink
-            as={NextLink}
-            href="/contact"
-            _hover={{ textDecoration: "none" }}
+      <Box bg="gray.50" py={20}>
+        <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
+          <VStack
+            gap={6}
+            p={10}
+            bg="white"
+            rounded="2xl"
+            shadow="md"
+            border="1px solid"
+            borderColor="cyan.100"
           >
-            <Button
-              bg="#4caf50"
-              color="white"
-              size="lg"
-              px={10}
-              _hover={{ bg: "#83c5be" }}
-            >
-              Contact Us
-            </Button>
-          </ChakraLink>
-        </VStack>
-      </Container>
+            <Heading color="black" size="md">
+              Ready for reliable irrigation?
+            </Heading>
+
+            <Text color="gray.600" fontFamily="'Lexend', sans-serif">
+              Stop worrying about fuel prices or power cuts affecting your
+              crops. Switch to a maintenance-free solar pumping solution
+              designed for the Swati climate.
+            </Text>
+
+            <NextLink href="/contact" passHref>
+              <Button
+                bg="#4caf50"
+                color="white"
+                size="lg"
+                px={10}
+                _hover={{ bg: "#3d8b40" }} // Slightly darker green for a better hover effect
+              >
+                Contact Us
+              </Button>
+            </NextLink>
+          </VStack>
+        </Container>
+      </Box>
     </>
   );
 }

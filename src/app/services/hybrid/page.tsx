@@ -8,6 +8,8 @@ import {
   VStack,
   Heading,
   Button,
+  Text,
+  Box,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -33,36 +35,45 @@ export default function HybridPage() {
         description="Optimizing energy by blending solar power with the utility grid."
         projects={hybridProjects}
       />
-      <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
-        <VStack
-          gap={6}
-          p={10}
-          bg="white"
-          rounded="2xl"
-          shadow="md"
-          border="1px solid"
-          borderColor="cyan.100"
-        >
-          <Heading color="black" size="md">
-            Interested to work with us?
-          </Heading>
-          <ChakraLink
-            as={NextLink}
-            href="/contact"
-            _hover={{ textDecoration: "none" }}
+      <Box bg="gray.50" py={20}>
+        <Container maxW="container.md" textAlign="center" mt={0} pb={24}>
+          <VStack
+            p={10}
+            bg="white"
+            rounded="2xl"
+            shadow="md"
+            border="1px solid"
+            borderColor="gray.100"
+            gap={6}
           >
-            <Button
-              bg="#4caf50"
-              color="white"
-              size="lg"
-              px={10}
-              _hover={{ bg: "#83c5be" }}
+            <Heading
+              size="md"
+              fontFamily="'Outfit', sans-serif"
+              color="gray.800"
             >
-              Contact Us
-            </Button>
-          </ChakraLink>
-        </VStack>
-      </Container>
+              Interested to work with us?
+            </Heading>
+
+            <Text color="gray.600" fontFamily="'Lexend', sans-serif">
+              Whether you're looking for a residential backup or a large-scale
+              commercial setup, our team is ready to help you switch to clean
+              energy.
+            </Text>
+
+            <NextLink href="/contact" passHref>
+              <Button
+                bg="#4caf50"
+                color="white"
+                size="lg"
+                px={10}
+                _hover={{ bg: "#3d8b40" }} // Slightly darker green for a better hover effect
+              >
+                Contact Us
+              </Button>
+            </NextLink>
+          </VStack>
+        </Container>
+      </Box>
     </>
   );
 }
