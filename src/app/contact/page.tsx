@@ -166,7 +166,7 @@ export default function ContactPage() {
                 <HStack
                   key={i}
                   p={8}
-                  bg="gray.50"
+                  bg="gray.200"
                   rounded="3xl"
                   width="full"
                   transition="all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
@@ -222,7 +222,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            bg="white"
+            bg="lightgray"
             p={{ base: 8, md: 16 }}
             rounded="4xl"
             shadow="0 50px 100px -20px rgba(0,0,0,0.15)"
