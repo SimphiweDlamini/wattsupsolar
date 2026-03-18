@@ -40,7 +40,6 @@ const impactImages = [
   { src: "/pic2.jpeg" },
 ];
 
-// --- DATA ARRAYS ---
 const leadership = [
   { name: "John Thomson", role: "CEO", nickname: "Mashesha" },
   { name: "Clinton McNamara", role: "Managing Director" },
@@ -78,7 +77,6 @@ const AboutPage = () => {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -250]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -450]);
 
   const TeamMemberCard = ({
     member,
@@ -88,7 +86,6 @@ const AboutPage = () => {
     index: number;
   }) => {
     const imageSrc = teamImages[member.name] || "/team/placeholder.jpg";
-
     return (
       <MotionBox
         initial={{ opacity: 0, y: 30 }}
@@ -338,13 +335,14 @@ const AboutPage = () => {
                 width="100%"
               >
                 <Box
-                  borderLeft={{ base: "none", md: "10px solid" }}
                   borderTop={{ base: "4px solid", md: "none" }}
+                  borderLeft={{ md: "10px solid" }}
+                  color="#06d00c"
                   borderColor="#06d00c"
                   pt={{ base: 4, md: 0 }}
-                  ps={{ base: 0, md: 12 }}
+                  ps={{ md: 12 }}
                 >
-                  <Text fontWeight="900" fontSize="xl" mb={2}>
+                  <Text fontWeight="900" fontSize="xl" mb={2} color="black">
                     THE VISION
                   </Text>
                   <Text color="gray.500" fontSize={{ base: "md", md: "xl" }}>
@@ -352,13 +350,14 @@ const AboutPage = () => {
                   </Text>
                 </Box>
                 <Box
-                  borderLeft={{ base: "none", md: "10px solid" }}
                   borderTop={{ base: "4px solid", md: "none" }}
+                  borderLeft={{ md: "10px solid" }}
                   borderColor="#06d00c"
+                  color="#06d00c"
                   pt={{ base: 4, md: 0 }}
-                  ps={{ base: 0, md: 12 }}
+                  ps={{ md: 12 }}
                 >
-                  <Text fontWeight="900" fontSize="xl" mb={2}>
+                  <Text fontWeight="900" fontSize="xl" mb={2} color="black">
                     THE GOAL
                   </Text>
                   <Text color="gray.500" fontSize={{ base: "md", md: "xl" }}>
@@ -394,20 +393,12 @@ const AboutPage = () => {
             <Box w="60px" h="4px" bg="#06d00c" />
           </VStack>
           <VStack gap={{ base: 12, md: 32 }}>
-            <SimpleGrid
-              columns={{ base: 1, md: 3 }}
-              gap={{ base: 16, md: 16 }}
-              width="full"
-            >
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={16} width="full">
               {leadership.map((member, i) => (
                 <TeamMemberCard key={member.name} member={member} index={i} />
               ))}
             </SimpleGrid>
-            <SimpleGrid
-              columns={{ base: 1, md: 3 }}
-              gap={{ base: 16, md: 16 }}
-              width="full"
-            >
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={16} width="full">
               {management.map((member, i) => (
                 <TeamMemberCard
                   key={member.name}
@@ -433,7 +424,7 @@ const AboutPage = () => {
         </Container>
       </Box>
 
-      {/* 4. IMPACT SECTION */}
+      {/* 4. IMPACT SECTION - FULL TEXT RESTORED */}
       <Box py={{ base: "20", md: "40" }} bg="white">
         <Container maxW="7xl" px={6}>
           <Stack
@@ -441,7 +432,7 @@ const AboutPage = () => {
             gap={{ base: 12, md: 24 }}
             align="center"
           >
-            <VStack flex="1.3" align="flex-start" gap={8} width="100%">
+            <VStack flex="1.3" align="flex-start" gap={10} width="100%">
               <Heading
                 fontSize={{ base: "3xl", md: "6xl" }}
                 fontWeight="900"
@@ -483,7 +474,7 @@ const AboutPage = () => {
                 </Tabs.List>
                 <Box minH={{ base: "auto", md: "220px" }}>
                   <Tabs.Content value="projects">
-                    <VStack align="flex-start" gap={6}>
+                    <VStack align="flex-start" gap={8}>
                       <Text
                         color="gray.600"
                         fontSize={{ base: "lg", md: "2xl" }}
@@ -495,10 +486,15 @@ const AboutPage = () => {
                         charging infrastructure for the country’s very first
                         high-performance electrical car.
                       </Text>
+                      <Text color="gray.500" fontSize="lg">
+                        This project demonstrated that we can provide scalable,
+                        high-voltage solutions with 100% local expertise,
+                        pushing Eswatini towards a truly clean transport future.
+                      </Text>
                     </VStack>
                   </Tabs.Content>
                   <Tabs.Content value="events">
-                    <VStack align="flex-start" gap={6}>
+                    <VStack align="flex-start" gap={8}>
                       <Text
                         color="gray.600"
                         fontSize={{ base: "lg", md: "2xl" }}
@@ -506,13 +502,19 @@ const AboutPage = () => {
                       >
                         We are proud to provide reliable, off-grid power to
                         major local charity events, markets, and gatherings. We
-                        ensure everything functions flawlessly using only the
-                        sun.
+                        ensure that sound systems, lighting, and hospitality
+                        function flawlessly using only the sun.
+                      </Text>
+                      <Text color="gray.500" fontSize="lg">
+                        When you see the Watts Up Solar logo powering an event
+                        (like in the pictures), you’re seeing sustainable energy
+                        in action, supporting our community with innovative,
+                        portable engineering.
                       </Text>
                     </VStack>
                   </Tabs.Content>
                   <Tabs.Content value="geysers">
-                    <VStack align="flex-start" gap={6}>
+                    <VStack align="flex-start" gap={8}>
                       <Text
                         color="gray.600"
                         fontSize={{ base: "lg", md: "2xl" }}
@@ -522,6 +524,12 @@ const AboutPage = () => {
                         retrofits for rural geyser systems are lowering
                         electricity costs and providing consistent hot water
                         across Eswatini.
+                      </Text>
+                      <Text color="gray.500" fontSize="lg">
+                        We are converting existing geysers to run efficiently on
+                        PV panels. It's a localized, high-impact solution that
+                        proves solar innovation isn't just for commercial
+                        clients—it’s for everyone.
                       </Text>
                     </VStack>
                   </Tabs.Content>
@@ -542,6 +550,7 @@ const AboutPage = () => {
                   shadow="xl"
                   mt={{ base: 0, md: i % 2 !== 0 ? "60px" : "0" }}
                   mb={{ base: 0, md: i % 2 !== 0 ? "0" : "60px" }}
+                  whileHover={{ y: -10 }}
                 >
                   <Image
                     src={img.src}
@@ -590,7 +599,7 @@ const AboutPage = () => {
             display="flex"
             width="max-content"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+            transition={{ duration: 25, ease: "linear", repeat: Infinity }}
           >
             {[...clients, ...clients].map((client, i) => (
               <Box
