@@ -1,79 +1,43 @@
 "use client";
 
-import ServicePageTemplate from "@/components/ServiceTemplatePage";
+import ServiceTemplatePage from "@/components/ServiceTemplatePage";
 import { Project } from "@/components/types/project";
-import {
-  Link as ChakraLink,
-  Container,
-  VStack,
-  Heading,
-  Button,
-  Text,
-  Box,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box } from "@chakra-ui/react";
+import { HybridLogic } from "./HybridLogic";
+import { SolutionCTA } from "@/components/SolutionCTA";
 
 const hybridProjects: Project[] = [
   {
     title: "40kW Peace Corps Solar Installation",
     location: "Mbabane, Eswatini",
     description:
-      "A high-capacity solution featuring an ATESS HPS30 hybrid system for uninterrupted facility power.",
+      "A high-capacity solution featuring an ATESS HPS30 hybrid system. Engineered for uninterrupted facility power by blending solar, battery, and utility grid inputs seamlessly.",
     image: "/pic14.jpg",
     type: "Hybrid",
-    sector: "NGO", // Custom sector
-    stats: "33kW Hybrid, ATESS Inverter",
+    sector: "NGO",
+    stats: "40kW Hybrid, ATESS HPS30 Inverter",
   },
 ];
 
 export default function HybridPage() {
   return (
-    <>
-      <ServicePageTemplate
+    <Box bg="white" minH="100vh">
+      {/* 1. Blueprint Service Template */}
+      <ServiceTemplatePage
         serviceTitle="Hybrid"
         highlightWord="Systems"
-        description="Optimizing energy by blending solar power with the utility grid."
+        description="The ultimate balance of reliability and efficiency. Optimize your energy consumption by blending solar power with the utility grid for 24/7 uptime."
         projects={hybridProjects}
       />
-      <Box bg="gray.50" py={20}>
-        <Container maxW="container.md" textAlign="center" mt={0} pb={24}>
-          <VStack
-            p={10}
-            bg="white"
-            rounded="2xl"
-            shadow="md"
-            border="1px solid"
-            borderColor="gray.100"
-            gap={6}
-          >
-            <Heading
-              size="md"
-              fontFamily="'Outfit', sans-serif"
-              color="gray.800"
-            >
-              Interested to work with us?
-            </Heading>
 
-            <Text color="gray.600" fontFamily="'Lexend', sans-serif">
-              Whether you're looking for a residential backup or a large-scale
-              commercial setup, our team is ready to help you switch to clean
-              energy.
-            </Text>
+      {/* 2. Intelligent Priority Logic Section */}
+      <HybridLogic />
 
-            <NextLink href="/contact" passHref>
-              <Button
-                bg="#4caf50"
-                color="white"
-                size="lg"
-                px={10}
-                _hover={{ bg: "#3d8b40" }} // Slightly darker green for a better hover effect
-              >
-                Contact Us
-              </Button>
-            </NextLink>
-          </VStack>
-        </Container>
-      </Box>
-    </>
+      {/* 3. High-Impact Call to Action */}
+      <SolutionCTA
+        title="Ready to secure your power?"
+        description="Whether you're looking for a residential backup or a large-scale commercial setup, our team is ready to engineer a system that guarantees your energy security."
+      />
+    </Box>
   );
 }

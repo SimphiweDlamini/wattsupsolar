@@ -1,24 +1,17 @@
 "use client";
 
-import ServicePageTemplate from "@/components/ServiceTemplatePage";
+import ServiceTemplatePage from "@/components/ServiceTemplatePage";
 import { Project } from "@/components/types/project";
-import {
-  Link as ChakraLink,
-  Container,
-  VStack,
-  Heading,
-  Button,
-  Box,
-  Text,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box } from "@chakra-ui/react";
+import { SavingsComparison } from "./SavingsComparison";
+import { SolutionCTA } from "@/components/SolutionCTA";
 
 const geyserProjects: Project[] = [
   {
     title: "Residential Hot Water Retrofit",
     location: "Manzini, Eswatini",
     description:
-      "Conversion of a standard electric geyser to a PV-powered system, allowing the family to have hot water throughout load-shedding.",
+      "Conversion of a standard electric geyser to a PV-powered system, allowing the family to maintain hot water throughout load-shedding events and grid failures.",
     image: "/SolarPV.jpg",
     type: "PV Geyser",
     sector: "Residential",
@@ -28,8 +21,8 @@ const geyserProjects: Project[] = [
     title: "Eco-Lodge Geyser Upgrade",
     location: "Ezulwini, Eswatini",
     description:
-      "Scaling hot water production for guest rooms using a centralized Solar PV heating array to minimize monthly utility overheads.",
-    image: "/pic15.jpeg", // Reusing a project image as a placeholder
+      "Scaling hot water production for guest rooms using a centralized Solar PV heating array to minimize monthly utility overheads and carbon footprint.",
+    image: "/pic15.jpeg",
     type: "PV Geyser",
     sector: "Commercial",
     stats: "Multi-unit Retrofit, DC Heating Elements",
@@ -38,47 +31,23 @@ const geyserProjects: Project[] = [
 
 export default function GeysersPage() {
   return (
-    <>
-      <ServicePageTemplate
+    <Box bg="white" minH="100vh">
+      {/* 1. Blueprint Service Template */}
+      <ServiceTemplatePage
         serviceTitle="Solar PV"
         highlightWord="Geysers"
-        description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your electricity bill."
+        description="The most cost-effective way to heat water. Convert your existing geyser to run on solar panels and save up to 40% on your total electricity bill."
         projects={geyserProjects}
       />
-      <Box bg="gray.50" py={20}>
-        <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
-          <VStack
-            gap={6}
-            p={10}
-            bg="white"
-            rounded="2xl"
-            shadow="md"
-            border="1px solid"
-            borderColor="cyan.100"
-          >
-            <Heading color="black" size="md">
-              Tired of high geyser bills?
-            </Heading>
 
-            <Text color="gray.600" fontFamily="'Lexend', sans-serif">
-              Water heating is usually the biggest expense in a home. Retrofit
-              your existing geyser with solar PV and start saving from the very
-              first day.
-            </Text>
-            <NextLink href="/contact" passHref>
-              <Button
-                bg="#4caf50"
-                color="white"
-                size="lg"
-                px={10}
-                _hover={{ bg: "#3d8b40" }} // Slightly darker green for a better hover effect
-              >
-                Contact Us
-              </Button>
-            </NextLink>
-          </VStack>
-        </Container>
-      </Box>
-    </>
+      {/* 2. Technical Savings Comparison Table */}
+      <SavingsComparison />
+
+      {/* 3. High-Definition Contact CTA */}
+      <SolutionCTA
+        title="Tired of high geyser bills?"
+        description="Water heating is typically the largest energy expense in any home. Retrofit your existing geyser with our Solar PV solution and eliminate that cost from day one."
+      />
+    </Box>
   );
 }

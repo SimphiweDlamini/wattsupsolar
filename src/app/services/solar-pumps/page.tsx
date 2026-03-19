@@ -1,24 +1,17 @@
 "use client";
 
-import ServicePageTemplate from "@/components/ServiceTemplatePage";
+import ServiceTemplatePage from "@/components/ServiceTemplatePage";
 import { Project } from "@/components/types/project";
-import {
-  Link as ChakraLink,
-  Container,
-  VStack,
-  Heading,
-  Button,
-  Box,
-  Text,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box } from "@chakra-ui/react";
+import { PumpMonitor } from "./PumpMonitor";
+import { SolutionCTA } from "@/components/SolutionCTA";
 
 const pumpProjects: Project[] = [
   {
     title: "Agricultural Irrigation Setup",
     location: "Malkerns, Eswatini",
     description:
-      "A high-flow solar pumping solution designed for crop irrigation, reducing the farm's reliance on expensive diesel generators.",
+      "A high-flow solar pumping solution designed for crop irrigation, eliminating the farm's reliance on expensive diesel generators and manual refueling.",
     image: "/SolarPump.png",
     type: "Solar Pump",
     sector: "Commercial",
@@ -28,8 +21,8 @@ const pumpProjects: Project[] = [
     title: "Livestock Watering System",
     location: "Shiselweni, Eswatini",
     description:
-      "Automated water supply for livestock using solar energy, ensuring consistent water access even in remote grazing areas.",
-    image: "/pic11.jpeg", // Reusing a project image as a placeholder
+      "Automated water supply for livestock using solar energy, ensuring consistent water access even in remote grazing areas without grid infrastructure.",
+    image: "/pic11.jpeg",
     type: "Solar Pump",
     sector: "Industrial",
     stats: "DC Solar Pump, 5000L/day",
@@ -38,48 +31,23 @@ const pumpProjects: Project[] = [
 
 export default function SolarPumpsPage() {
   return (
-    <>
-      <ServicePageTemplate
+    <Box bg="white" minH="100vh">
+      {/* 1. Industrial Blueprint Template */}
+      <ServiceTemplatePage
         serviceTitle="Solar"
         highlightWord="Pumps"
-        description="Sustainable water solutions for agriculture and livestock. Harness the sun to move water without fuel costs or grid reliance."
+        description="Sustainable water solutions for agriculture and livestock. Harness the sun to move water without fuel costs, grid reliance, or mechanical downtime."
         projects={pumpProjects}
       />
-      <Box bg="gray.50" py={20}>
-        <Container mt={0} maxW="container.md" textAlign="center" pb={24}>
-          <VStack
-            gap={6}
-            p={10}
-            bg="white"
-            rounded="2xl"
-            shadow="md"
-            border="1px solid"
-            borderColor="cyan.100"
-          >
-            <Heading color="black" size="md">
-              Ready for reliable irrigation?
-            </Heading>
 
-            <Text color="gray.600" fontFamily="'Lexend', sans-serif">
-              Stop worrying about fuel prices or power cuts affecting your
-              crops. Switch to a maintenance-free solar pumping solution
-              designed for the Swati climate.
-            </Text>
+      {/* 2. Agri-Tech Specification Grid */}
+      <PumpMonitor />
 
-            <NextLink href="/contact" passHref>
-              <Button
-                bg="#4caf50"
-                color="white"
-                size="lg"
-                px={10}
-                _hover={{ bg: "#3d8b40" }} // Slightly darker green for a better hover effect
-              >
-                Contact Us
-              </Button>
-            </NextLink>
-          </VStack>
-        </Container>
-      </Box>
-    </>
+      {/* 3. High-Impact CTA Dashboard */}
+      <SolutionCTA
+        title="Ready for reliable irrigation?"
+        description="Stop worrying about fuel prices or power cuts affecting your crops. Switch to a maintenance-free solar pumping solution engineered specifically for the Swati climate."
+      />
+    </Box>
   );
 }
