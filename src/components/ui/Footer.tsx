@@ -127,7 +127,7 @@ export default function Footer() {
                 <Text>Plot 256/7 Villiers St, Manzini, Eswatini</Text>
               </HStack>
               <HStack align="start" gap={3}>
-                <Icon as={FaPhone} color="#06d00c" mt={1} />
+                <Icon as={FaPhone} color="#06d00c" mt={1} rotate="90deg" />
                 <VStack align="start" gap={0}>
                   <Text>+268 2505 6492</Text>
                   <Text>+268 7903 2869</Text>
