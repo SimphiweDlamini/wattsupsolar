@@ -26,7 +26,7 @@ const teamImages: Record<string, string> = {
   "Jude Henwood": "/team/JudeHenwood.jpg",
   "Rodney Carval": "/team/RodneyCarval.jpeg",
   "Rosanne Frúhwirth": "/team/RosanneFruhwirth.jpeg",
-  "Zodwa McNamara": "/team/ZodwaMcNamara.jpg",
+  "Zodwa McNamara": "/team/ZodwaMcNamara.jpeg",
   "Lindokuhle Khulu": "/team/LindokuhleKhulu.jpeg",
   "Phumlani Shongwe": "/team/PhumlaniShongwe.jpg",
   "Nhlanhleni Shabangu": "/team/NhlanhleniShabangu.jpeg",
@@ -590,7 +590,7 @@ const AboutPage = () => {
               fontFamily="'Outfit', sans-serif"
               color="black"
             >
-              Trusted by Industry Leaders
+              Our Client Community
             </Heading>
           </VStack>
         </Container>
