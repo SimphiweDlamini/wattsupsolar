@@ -140,6 +140,7 @@ export default function Footer() {
                   <Text>office@wattsupsolar.co.sz</Text>
                   <Text>business@wattsupsolar.co.sz</Text>
                   <Text>marketing@wattsupsolar.co.sz</Text>
+                  <Text>info@wattsupsolar.co.sz</Text>
                 </VStack>
               </HStack>
             </VStack>
